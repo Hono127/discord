@@ -1,7 +1,8 @@
 import { DocumentData } from "firebase/firestore/lite";
-import React, { useEffect } from "react";
-import { useAppDispatch } from "../app/hooks";
-import { setChannelInfo } from "../features/appSlice";
+import { useEffect } from "react";
+
+import { useAppDispatch } from "../../app/hooks";
+import { setChannelInfo } from "../../features/appSlice";
 import "./SidebarChannel.scss";
 
 type Props = {

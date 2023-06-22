@@ -1,23 +1,22 @@
-import { ExpandMoreOutlined, Settings } from "@mui/icons-material";
-import AddIcon from "@mui/icons-material/Add";
-import MicIcon from "@mui/icons-material/Mic";
-import HeadphonesIcon from "@mui/icons-material/Headphones";
-import React, { useEffect, useState } from "react";
-import "./Sidebar.scss";
-import SidebarChannle from "./SidebarChannle";
-import { useAppSelector } from "../app/hooks";
-import { db, auth } from "../firebase";
 import {
   collection,
   addDoc,
   DocumentData,
   DocumentReference,
 } from "firebase/firestore";
-import useFirebase from "../hooks/useFirebase";
+import { ExpandMoreOutlined, Settings } from "@mui/icons-material";
+import AddIcon from "@mui/icons-material/Add";
+import MicIcon from "@mui/icons-material/Mic";
+import HeadphonesIcon from "@mui/icons-material/Headphones";
+
+import { useAppSelector } from "../../app/hooks";
+import { db, auth } from "../../firebase";
+import "./Sidebar.scss";
+import SidebarChannle from "../SidebarChannel/SidebarChannle";
+import useFirebase from "../../hooks/useFirebase";
 
 const Sidebar = () => {
   const user = useAppSelector((state) => state.user.user);
-  // const [channels, setChannels] = useState<Channel[]>([]);
 
   const { documents: channels } = useFirebase("channels");
   console.log(channels);
@@ -32,14 +31,12 @@ const Sidebar = () => {
           channelName: channelName,
         }
       );
-      // console.log(docRef);
     }
   };
 
   return (
     <div className="sidebar">
       <div className="sidebarLeft">
-        {/* discrodIcon */}
         <div className="serverIcon">
           <img src="./discordLogo.png" alt="" />
         </div>
@@ -71,9 +68,6 @@ const Sidebar = () => {
                 key={channel.id}
               />
             ))}
-            {/* <SidebarChannle id="1" channel="sample" />
-            <SidebarChannle id="1" channel="sample" />
-            <SidebarChannle id="1" channel="sample" /> */}
           </div>
 
           <div className="sidebarSettings">

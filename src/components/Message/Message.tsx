@@ -1,6 +1,6 @@
 import { Avatar } from "@mui/material";
-import { FieldValue, Timestamp } from "firebase/firestore";
-import React from "react";
+import { Timestamp } from "firebase/firestore";
+
 import "./Message.scss";
 
 type Props = {
@@ -16,8 +16,6 @@ type Props = {
 
 const Message = (props: Props) => {
   const { message, timestamp, user } = props;
-  // console.log(timestamp.seconds.toDate());
-
   return (
     <div className="message">
       <Avatar src={user?.photo} />
