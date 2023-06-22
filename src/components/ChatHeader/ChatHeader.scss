@@ -16,7 +16,7 @@
     }
 
     h3 {
-      color: #ffffff;
+      color: #fff;
       display: flex;
       align-items: center;
     }
@@ -32,7 +32,7 @@
     .chatHeaderSearch {
       display: flex;
       align-items: center;
-      color: gray;
+      color: #7b7c85;
       background-color: #40404a;
       border-radius: 3px;
       padding: 3px;
@@ -40,7 +40,7 @@
       input {
         background: transparent;
         outline: 0;
-        color: white;
+        color: #fff;
         border: none;
       }
     }

@@ -6,7 +6,7 @@ import {
 } from "@mui/icons-material";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import React from "react";
+
 import "./ChatHeader.scss";
 
 type Props = {

@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase";
+import { useEffect, useState } from "react";
 import { QueryDocumentSnapshot } from "firebase/firestore/lite";
 import {
   onSnapshot,
   collection,
   DocumentData,
-  CollectionReference,
   Timestamp,
   query,
   orderBy,
 } from "firebase/firestore";
+
 import { useAppSelector } from "../app/hooks";
+import { db } from "../firebase";
 
 interface Messages {
   timestamp: Timestamp;

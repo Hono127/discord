@@ -1,5 +1,6 @@
 .sidebarChannel {
   padding-left: 20px;
+
   h4 {
     color: #7b7c85;
     display: flex;
@@ -8,7 +9,7 @@
     cursor: pointer;
 
     &:hover {
-      color: white;
+      color: #fff;
       background-color: #33363d;
       border-radius: 12px;
     }

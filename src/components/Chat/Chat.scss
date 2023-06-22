@@ -24,15 +24,17 @@
 
     form {
       flex-grow: 1;
+
       input {
         padding: 15px;
         background: transparent;
         border: none;
         outline: 0;
-        color: white;
+        color: #fff;
         font-size: large;
         width: 100%;
       }
+
       .chatInputButton {
         display: none;
       }

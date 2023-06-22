@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import "./App.scss";
-import { useAppSelector, useAppDispatch } from "./app/hooks";
-import Chat from "./components/Chat";
-import { ErrorFallback } from "./components/ErrorFallBack";
-import Login from "./components/Login";
-import Sidebar from "./components/Sidebar";
 import { login, logout } from "./features/userSlice";
 import { auth } from "./firebase";
-import { Suspense } from "react";
+import { useAppSelector, useAppDispatch } from "./app/hooks";
+import { ErrorFallback } from "./components/ErrorFallBack";
+import Chat from "./components/Chat/Chat";
+import Login from "./components/Login/Login";
+import Sidebar from "./components/Sidebar/Sidebar";
+import "./App.scss";
+
 
 function App() {
   const user = useAppSelector((state) => state.user.user);
-  // console.log(user);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -37,13 +36,9 @@ function App() {
     <div className="App">
       {user ? (
         <>
-          {/* sidebar */}
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            {/* <Suspense fallback={<div>...Loading</div>}> */}
             <Sidebar />
-            {/* </Suspense> */}
           </ErrorBoundary>
-          {/* home */}
           <Chat />
         </>
       ) : (
